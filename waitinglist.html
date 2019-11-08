@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+        <title>Services</title>
+        <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+       
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header" class="alt">
+				<div class="logo"><a href="index.html">M Nail Art Studio<span> by Monica Dempsey</span></a></div>
+				<a href="#menu"><span>Menu</span></a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">About Us</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
+					<li><a href="ourteam.html">Our Team</a></li>
+				</ul>
+			</nav>
+
+		<!-- Content -->
+			<section id="post" class="wrapper bg-img" data-bg="banner2.jpg">
+				<div class="inner">
+					<article class="box">
+						<header>
+							<h2>Waiting List</h2>
+                            <p>Due to a huge interest in our services, please sign in to our waiting list. <br/>
+                            We will contact you as soon as we have a free place available.</p>
+						</header>
+						<div class="content">
+                             <h2>Number in the queue <span id="clientCount">0</span></h2>
+                                 <div id="clientList">	
+                                    <button type = "button" id="add" type="text" onclick = "addClient()">Enter your details here</button>
+                                    <button type = "button" id="remove" type="text" onclick = "removeClient()">Remove details</button>
+                                </div>
+                                 <script>
+                                    var clientCount = 0;
+                                    var myClientArray=[];
+                                
+                                    function createInitialArray(){
+                                         myClientArray.push("Kate","Agatha","Jane");
+                                            for(var x=ClientArray.length; x>0; x--){	
+                                                document.getElementById("clientList").children[0].innerHTML += "<li>"+myClientArray[myClientArray.length-x]+"</li>";
+                                                clientCount += 1; 	
+                                    
+                                        }
+                                            document.getElementById("clientCount").innerHTML = clientCount;
+                                    }
+                                
+                                    function addClient(){
+                                      
+                                        var newClient = prompt("Enter a new details","");
+                                        myClientArray.push(newClient); 
+                                        document.getElementById("clientList").children[0].innerHTML += "<li>"+myClientArray[myClientArray.length-1]+"</li>";
+                                        clientCount += 1;
+                                        document.getElementById("clientCount").innerHTML = clientCount;
+                                
+                                    }
+                                
+                                    function removeClient(){
+                                      var removedClient = prompt("What details would you like to remove","");
+                                
+                                        for(var i = 0; i< myClientArray.length; i++) {
+                                
+                                            if(myClientArray[i] === removedClient) {
+                                                    
+                                                myClientArray.splice(i, 1);
+                                                var toReplace = "<li>"+removedClient+"</li>"; 
+                                                document.getElementById("clientList").children[0].innerHTML = document.getElementById("clientList").children[0].innerHTML.replace(toReplace, ""); //element is going to be replaced with space
+                                                clientCount -= 1; 
+                                                document.getElementById("clientCount").innerHTML = clientCount; 
+                                
+                                              }
+                                            }
+                                        }
+                                    </script>
+                           	</div>
+					</article>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+						<article class="box">
+							<ul class="icons">
+						<li><a href="https://www.facebook.com/M.NailArtBlog/" class="icon round fa-facebook"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/monica.nails.ie/?hl=pl" class="icon round fa-instagram"><span class="label">Instagram</span></a></li>
+					</ul>
+					<div class="copyright">
+						&copy; M Nail Art Studio Design by Jakub Zganiacz.</a>
+					</div>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
